@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Page</title>
+    <style>
+        div{
+            color:black;
+        }
+        body {
+            background-image: url("{% static 'CrimePrediction/Images/PredPage.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .main{
+            position: fixed;
+            top: 140px;
+            left: 410px;
+            width: 550px;
+            background-color:#ffffff;
+            border-radius: 10px;
+            align-items: center;
+            padding: 5%;
+        }
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input[type=submit]{
+            background-color: #4dc3ff;
+            border: 2px;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div align='center' class="main">
+    <h1> WELCOME TO CRIME PREDICTION SYSTEM (SafeCityAI) </h1>
+    <h3>Please enter the following information:</h3>
+    <form action="result">
+        <table>
+            <tr>
+                <td align="right" >Longitude:</td>
+                <td align="left"><input type="text" name="n1"></td>
+            </tr>
+            <tr>
+                <td align="right" >Latitude:</td>
+                <td align="left"><input type="text" name="n2"></td>
+            </tr>
+            <tr>
+                <td align="right" >Year:</td>
+                <td align="left"><input type="text" name="n3"></td>
+            </tr>
+            <tr>
+                <td align="right" >Month:</td>
+                <td align="left"><input type="text" name="n4"></td>
+            </tr>
+            <tr>
+                <td align="right" >Date:</td>
+                <td align="left"><input type="text" name="n5"></td>
+            </tr>
+            <tr>
+                <td align="right" >Time(24 hour format):</td>
+                <td align="left"><input type="text" name="n6"></td>
+            </tr>
+        </table>
+        <input type="submit">
+    </form>
+    Result:{{result2}}
+    <h4>The system has an overall accuracy of 98.067 percent.</h4>
+</div>
+</body>
+</html>
